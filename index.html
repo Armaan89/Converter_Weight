@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+    <title>weight converter</title>
+    <style>
+    body{ margin-top: 50px;background: #333; color: #ffffff;}
+  
+    </style>
+  </head>
+  <body>
+ 
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="display-4 text-center mb-3">
+          <h1 class="">Weight Converter</h1>
+         <form>
+           <div class="form-group">
+           <input type="number" id="inpNum" class="form-control fomr-control-lg" placeholder="Enter pounds...">
+           </div>
+         </form>
+         <div id="output">
+            <div class="card bg-primary mb-2">
+                  <div class="card-block">
+                  <h5 class="card-title text-md-left mx-2">Grams:</h5>
+                 <div id="grmOutput"></div>
+                </div>
+              </div>
+
+              <div class="card bg-success mb-2">
+                  <div class="card-block ">
+                  <h5 class="card-title text-md-left mx-2">Kilo Grams:</h5>
+                 <div id="kgOutput"></div>
+                </div>
+              </div>
+
+              <div class="card bg-danger">
+                  <div class="card-block">
+                  <h5 class="card-title text-md-left mx-2">Ounces:</h5>
+                 <div id="ozOutput"></div>
+                </div>
+              </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+      document.getElementById("output").style.visibility="hidden";
+    document.getElementById("inpNum").addEventListener('input',function(e){
+      document.getElementById("output").style.visibility="visible";
+      let inputNum=e.target.value;
+      
+      document.getElementById("grmOutput").innerHTML=(inputNum/453.592).toFixed(4);
+      document.getElementById("kgOutput").innerHTML=(inputNum/0.453592).toFixed(4);
+      document.getElementById("ozOutput").innerHTML=inputNum*16;
+    });
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
